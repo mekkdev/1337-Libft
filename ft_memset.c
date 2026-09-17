@@ -9,19 +9,20 @@
 /*   Updated: 2026/09/13 10:31:47 by himekkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-void	*memset(void *b, int c, size_t n)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t	i;
-	char	*ptr;
+	unsigned char	*ptr;
 
 	ptr = b;
 	i = 0;
-	while (i < n)
+	while (i < len)
 	{
-		ptr[i] = c;
+		ptr[i] = (unsigned char)c;
+		// we did casting when value outside 0-255
+		// it does modulo e.g 300 % 256 = 44
 		i++;
 	}
-	return (b);
+	return (ptr);
 }
