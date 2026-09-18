@@ -30,6 +30,8 @@ size_t		ft_strlcat(char *dst, const char *src, size_t size);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *str);
 void		*ft_memset(void *b, int c, size_t len);
+char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
+void		*ft_memcpy(void *dst, const void *src, size_t n);
 
 
 #endif
