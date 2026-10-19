@@ -6,7 +6,7 @@
 /*   By: himekkao <himekkao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 13:14:30 by himekkao          #+#    #+#             */
-/*   Updated: 2026/09/16 13:14:30 by himekkao         ###   ########.fr       */
+/*   Updated: 2026/10/17 09:22:56 by himekkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,3 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&s[i]);
 	return (0);
 }
-

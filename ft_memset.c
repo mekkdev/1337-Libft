@@ -6,7 +6,7 @@
 /*   By: himekkao <himekkao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 10:31:47 by himekkao          #+#    #+#             */
-/*   Updated: 2026/09/13 10:31:47 by himekkao         ###   ########.fr       */
+/*   Updated: 2026/10/17 09:20:03 by himekkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*ptr;
 
 	ptr = b;
@@ -22,8 +22,6 @@ void	*ft_memset(void *b, int c, size_t len)
 	while (i < len)
 	{
 		ptr[i] = (unsigned char)c;
-		// we did casting when value outside 0-255
-		// it does modulo e.g 300 % 256 = 44
 		i++;
 	}
 	return (ptr);

@@ -6,7 +6,7 @@
 /*   By: himekkao <himekkao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/18 11:26:37 by himekkao          #+#    #+#             */
-/*   Updated: 2026/09/18 11:26:37 by himekkao         ###   ########.fr       */
+/*   Updated: 2026/10/17 09:15:31 by himekkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	const unsigned char	*str1;
 	const unsigned char	*str2;
-	size_t		i;
+	size_t				i;
 
 	i = 0;
 	str1 = s1;

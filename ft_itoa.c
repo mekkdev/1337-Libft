@@ -6,7 +6,7 @@
 /*   By: himekkao <himekkao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 11:21:45 by himekkao          #+#    #+#             */
-/*   Updated: 2026/09/23 11:21:45 by himekkao         ###   ########.fr       */
+/*   Updated: 2026/10/17 11:08:20 by himekkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ char	*ft_itoa(int c)
 
 	num = c;
 	sign = 'P';
+	i = 0;
 	if (num < 0)
 	{
 		sign = 'N';
@@ -34,8 +35,6 @@ char	*ft_itoa(int c)
 		tab[0] = '-';
 		i = 1;
 	}
-	else
-		i = 0;
 	while (num > 9)
 	{
 		tab[i] = (num % 10) + '0';
@@ -48,13 +47,12 @@ char	*ft_itoa(int c)
 	new = malloc(sizeof(char) * (len_tab + 1));
 	if (!(new))
 		return (0);
+	i = 0;
 	if (tab[0] == '-')
 	{
 		i = 1;
 		new[0] = '-';
 	}
-	else
-		i = 0;
 	j = len_tab - 1;
 	while (i < len_tab)
 	{

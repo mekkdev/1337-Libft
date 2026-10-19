@@ -6,7 +6,7 @@
 /*   By: himekkao <himekkao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 06:10:03 by himekkao          #+#    #+#             */
-/*   Updated: 2026/09/29 06:10:03 by himekkao         ###   ########.fr       */
+/*   Updated: 2026/10/17 09:35:01 by himekkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (new);
 	}
 	i = 0;
-	while(i < len && start < len_s)
+	while (i < len && start < len_s)
 	{
 		new[i] = s[start];
 		i++;

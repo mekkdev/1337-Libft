@@ -6,17 +6,15 @@
 /*   By: himekkao <himekkao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/12 10:56:27 by himekkao          #+#    #+#             */
-/*   Updated: 2026/09/12 10:56:27 by himekkao         ###   ########.fr       */
+/*   Updated: 2026/10/17 09:10:04 by himekkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // isdigit() function checks ACSII characters.
 int	ft_isdigit(int n)
 {
-	if(n >= '0' && n <= '9')
+	if (n >= '0' && n <= '9')
 		return (1);
 	else
 		return (0);
 }
-
-

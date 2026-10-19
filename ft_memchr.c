@@ -6,7 +6,7 @@
 /*   By: himekkao <himekkao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/18 11:19:10 by himekkao          #+#    #+#             */
-/*   Updated: 2026/09/18 11:19:10 by himekkao         ###   ########.fr       */
+/*   Updated: 2026/10/17 09:11:37 by himekkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (str[i] == (char)c)
-			return	((char *)&str[i]);
+			return ((char *)&str[i]);
 		i++;
 	}
-	return	(0);
+	return (0);
 }

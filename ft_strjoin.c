@@ -6,7 +6,7 @@
 /*   By: himekkao <himekkao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/25 15:14:31 by himekkao          #+#    #+#             */
-/*   Updated: 2026/09/25 15:14:31 by himekkao         ###   ########.fr       */
+/*   Updated: 2026/10/17 09:26:17 by himekkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!(new))
 		return (0);
 	i = 0;
-	while(i < ft_strlen(s1))
+	while (i < ft_strlen(s1))
 	{
 		new[i] = s1[i];
 		i++;

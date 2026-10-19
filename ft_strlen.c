@@ -6,13 +6,13 @@
 /*   By: himekkao <himekkao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/12 10:55:33 by himekkao          #+#    #+#             */
-/*   Updated: 2026/09/12 10:55:33 by himekkao         ###   ########.fr       */
+/*   Updated: 2026/10/17 09:29:16 by himekkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
