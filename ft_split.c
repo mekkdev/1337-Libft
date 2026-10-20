@@ -6,7 +6,7 @@
 /*   By: himekkao <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 10:35:32 by himekkao          #+#    #+#             */
-/*   Updated: 2026/10/19 10:43:17 by himekkao         ###   ########.fr       */
+/*   Updated: 2026/10/19 10:49:40 by himekkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	**ft_split(char const *s, char c)
 		while (s[i] == c)
 			i++;
 		if (s[i] == '\0')
-			break;
+			break ;
 		first_index = i;
 		while (s[i] && s[i] != c)
 		{
@@ -65,8 +65,8 @@ char	**ft_split(char const *s, char c)
 		if (!new[j])
 		{
 			while(j > 0)
-				free(new[--j]);
-			free(new);	
+				free (new[--j]);
+			free(new);
 			return (NULL);
 		}
 		k = 0;
@@ -82,8 +82,6 @@ char	**ft_split(char const *s, char c)
 		return (new);
 }
 
-
-
 int	main(void)
 {
 	char	**test;
@@ -98,9 +96,7 @@ int	main(void)
 		printf("string : %s \n", test[i]);
 		free(test[i]);
 		i++;
-	}
-
-	
+	}	
 	free (test);
 	return (0);
 }
