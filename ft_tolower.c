@@ -6,9 +6,11 @@
 /*   By: himekkao <himekkao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/14 12:53:17 by himekkao          #+#    #+#             */
-/*   Updated: 2026/09/14 12:53:17 by himekkao         ###   ########.fr       */
+/*   Updated: 2026/10/26 11:27:51 by himekkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

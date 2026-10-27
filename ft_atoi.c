@@ -6,9 +6,11 @@
 /*   By: himekkao <himekkao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/17 12:23:23 by himekkao          #+#    #+#             */
-/*   Updated: 2026/10/17 09:01:21 by himekkao         ###   ########.fr       */
+/*   Updated: 2026/10/26 11:33:03 by himekkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

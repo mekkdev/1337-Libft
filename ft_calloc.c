@@ -6,12 +6,11 @@
 /*   By: himekkao <himekkao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 13:50:42 by himekkao          #+#    #+#             */
-/*   Updated: 2026/09/21 13:50:42 by himekkao         ###   ########.fr       */
+/*   Updated: 2026/10/26 11:32:44 by himekkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdint.h> // for SIZE_MAX of size_t
 
 void	*ft_calloc(size_t count, size_t size)
 {
