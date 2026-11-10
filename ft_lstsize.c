@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: himekkao <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: himekkao <himekkao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 10:27:50 by himekkao          #+#    #+#             */
-/*   Updated: 2026/10/24 06:51:18 by himekkao         ###   ########.fr       */
+/*   Updated: 2026/10/29 14:00:54 by himekkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 unsigned int	ft_lstsize(t_list *lst)
 {
-	unsigned int	i;
-	t_list			*ptr;
+	unsigned int			i;
+	t_list					*ptr;
 
 	i = 0;
 	ptr = lst;

@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-// dst must be null terminated in declaration not like strlcpy.
-
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	len_src;
@@ -22,10 +20,15 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	j;
 
 	i = 0;
-	len_dst = ft_strlen(dst);
+	while (i < dstsize && dst[i])
+		i++;
+	if (i == dstsize)
+		return (dstsize + ft_strlen(src));
+	len_dst = i;
 	len_src = ft_strlen(src);
+	i = 0;
 	j = len_dst;
-	if (dstsize > 0 && dstsize > len_dst)
+	if (dstsize > len_dst + 1)
 	{
 		while (src[i] && i < dstsize - len_dst - 1)
 		{

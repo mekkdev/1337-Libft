@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: himekkao <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: himekkao <himekkao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 07:00:52 by himekkao          #+#    #+#             */
 /*   Updated: 2026/10/20 07:07:50 by himekkao         ###   ########.fr       */

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: himekkao <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: himekkao <himekkao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 06:48:25 by himekkao          #+#    #+#             */
 /*   Updated: 2026/10/20 06:51:49 by himekkao         ###   ########.fr       */

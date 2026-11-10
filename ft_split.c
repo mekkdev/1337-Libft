@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: himekkao <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: himekkao <himekkao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 10:35:32 by himekkao          #+#    #+#             */
 /*   Updated: 2026/10/19 10:49:40 by himekkao         ###   ########.fr       */
@@ -11,9 +11,8 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static	int	word_counter(const char *s, char c)
+static int	word_counter(const char *s, char c)
 {
 	int	i;
 	int	words;
@@ -32,71 +31,73 @@ static	int	word_counter(const char *s, char c)
 	return (words);
 }
 
-char	**ft_split(char const *s, char c)
+static void	free_words(char **words, int count)
+{
+	while (count-- > 0)
+		free(words[count]);
+	free(words);
+}
+
+static char	*copy_word(const char *s, char c)
+{
+	int		len;
+	char	*word;
+
+	len = 0;
+	while (s[len] && s[len] != c)
+		len++;
+	word = malloc(sizeof(char) * (len + 1));
+	if (!word)
+		return (NULL);
+	len = 0;
+	while (s[len] && s[len] != c)
+	{
+		word[len] = s[len];
+		len++;
+	}
+	word[len] = '\0';
+	return (word);
+}
+
+static int	fill_words(char **words, const char *s, char c)
 {
 	int	i;
 	int	j;
-	int	k;
-	int	first_index;
-	char	**new;
-	int	word_len;
-	
+
 	i = 0;
 	j = 0;
-	if (!s)
-		return (0);
-	new = malloc(sizeof(char *) * (word_counter(s, c) + 1));
-	if (!new)
-		return (0);
 	while (s[i])
 	{
-		word_len = 0;
 		while (s[i] == c)
 			i++;
 		if (s[i] == '\0')
 			break ;
-		first_index = i;
-		while (s[i] && s[i] != c)
+		words[j] = copy_word(&s[i], c);
+		if (!words[j])
 		{
-			word_len++;
-			i++;
+			free_words(words, j);
+			return (0);
 		}
-		new[j] = malloc(sizeof(char) * (word_len + 1));
-		if (!new[j])
-		{
-			while(j > 0)
-				free (new[--j]);
-			free(new);
-			return (NULL);
-		}
-		k = 0;
-		while (word_len > k)
-		{
-			new[j][k] = s[first_index + k];
-			k++;
-		}
-		new[j][k] = '\0';
 		j++;
+		while (s[i] && s[i] != c)
+			i++;
 	}
-	new[j] = (NULL);
-		return (new);
+	return (1);
 }
 
-int	main(void)
+char	**ft_split(char const *s, char c)
 {
-	char	**test;
-	int	i;
+	char	**new;
+	int		count;
 
-	test = ft_split(" hicham  mekk   ", ' ');
-	if (!test)
-		return (1);
-	i = 0;
-	while (test[i])
-	{
-		printf("string : %s \n", test[i]);
-		free(test[i]);
-		i++;
-	}	
-	free (test);
-	return (0);
+	if (!s)
+		return (NULL);
+	count = word_counter(s, c);
+	new = malloc(sizeof(char *) * (count + 1));
+	if (!new)
+		return (NULL);
+	if (!fill_words(new, s, c))
+		return (NULL);
+	new[count] = NULL;
+	return (new);
 }

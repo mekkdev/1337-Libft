@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: himekkao <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: himekkao <himekkao@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 08:50:58 by himekkao          #+#    #+#             */
 /*   Updated: 2026/10/27 10:49:59 by himekkao         ###   ########.fr       */
@@ -12,74 +12,35 @@
 
 #include "libft.h"
 
-/*
-void	*f(void	*content)
+static t_list	*new_node(void *content, void (*del)(void *))
 {
-	int	*result;
-	
-	result = malloc(sizeof(int));
-	if (!result)
-		return NULL;
-	*result = *(int *)content + 1;
-	return (result);
-}
+	t_list	*node;
 
-void	del(void *content)
-{
-	free(content);
+	node = ft_lstnew(content);
+	if (!node)
+		del(content);
+	return (node);
 }
-*/
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*head;
+	void	*content;
 	t_list	*node;
-	void	*new_content;
 
+	if (!f || !del)
+		return (NULL);
 	head = NULL;
-	while (lst != NULL)
+	while (lst)
 	{
-		new_content = f(lst->content);
-		node = ft_lstnew(new_content);
+		content = f(lst->content);
+		if (!content)
+			return (ft_lstclear(&head, del), NULL);
+		node = new_node(content, del);
 		if (!node)
-		{
-			del(new_content);
-			ft_lstclear(&head, del);
-			return (NULL);
-		}
+			return (ft_lstclear(&head, del), NULL);
 		ft_lstadd_back(&head, node);
 		lst = lst->next;
 	}
 	return (head);
 }
-
-/*
-#include <stdio.h>
-int	main(void)
-{
-	t_list	*head;
-	t_list	*first;
-	t_list	*second;
-	t_list	*new_node;
-	int	x;
-	int	y;
-
-	x = 0;
-	y = 1;
-	head = NULL;
-	first = malloc(sizeof(t_list));
-	if (!first)
-		return 1;
-	second = malloc(sizeof(t_list));
-	if (!second)
-		return 1;
-	head = first;
-	first->content = &x;
-	second->content = &y;
-	second->next = NULL;
-	first->next = second;
-	new_node = ft_lstmap(first, f, del);
-	printf("%d", *(int *)new_node->content);
-	printf("%d", *(int *)new_node->next->content);	
-}
-*/

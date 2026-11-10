@@ -12,54 +12,51 @@
 
 #include "libft.h"
 
-char	*ft_itoa(int c)
+static int	digit_count(long num)
 {
-	char	sign;
-	int	len_tab;
-	char	tab[20];
-	int	i;
-	int	j;
-	char	*new;
-	long	num;
+	int	len;
 
-	num = c;
-	sign = 'P';
-	i = 0;
+	len = 1;
 	if (num < 0)
 	{
-		sign = 'N';
+		len++;
 		num = -num;
-	}
-	if (sign == 'N')
-	{
-		tab[0] = '-';
-		i = 1;
 	}
 	while (num > 9)
 	{
-		tab[i] = (num % 10) + '0';
-		num = num / 10;
-		i++;
+		num /= 10;
+		len++;
 	}
-	tab[i] = num + '0';
-	tab[i + 1] = '\0';
-	len_tab = ft_strlen(tab);
-	new = malloc(sizeof(char) * (len_tab + 1));
-	if (!(new))
-		return (0);
-	i = 0;
-	if (tab[0] == '-')
+	return (len);
+}
+
+static void	write_number(char *str, long num, int len)
+{
+	int	negative;
+
+	negative = num < 0;
+	if (negative)
 	{
-		i = 1;
-		new[0] = '-';
+		str[0] = '-';
+		num = -num;
 	}
-	j = len_tab - 1;
-	while (i < len_tab)
+	str[len] = '\0';
+	while (len-- > negative)
 	{
-		new[i] = tab[j];
-		i++;
-		j--;
+		str[len] = (num % 10) + '0';
+		num /= 10;
 	}
-	new[i] = '\0';
+}
+
+char	*ft_itoa(int n)
+{
+	char	*new;
+	int		len;
+
+	len = digit_count(n);
+	new = malloc(sizeof(char) * (len + 1));
+	if (!new)
+		return (NULL);
+	write_number(new, n, len);
 	return (new);
 }

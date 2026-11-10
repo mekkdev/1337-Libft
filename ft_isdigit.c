@@ -10,10 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-// isdigit() function checks ACSII characters.
-
 int	ft_isdigit(int n)
 {
 	if (n >= '0' && n <= '9')
